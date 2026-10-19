@@ -99,14 +99,16 @@ export default function ListingDetail() {
       </p>
 
       {/* gallery */}
-<div className="mt-5 grid gap-3 md:grid-cols-[2fr_1fr]">
+      <div className="mt-5 grid gap-3 md:grid-cols-[2fr_1fr]">
         <img src={listing.images[imageIndex]} alt={listing.title} className="aspect-[16/10] w-full rounded-2xl bg-slate-200 object-cover" />
-        <div className="grid grid-cols-3 gap-3 md:grid-cols-1 md:grid-rows-3">
-          {listing.images.slice(0, 3).map((src, i) => (
-            <button key={src} onClick={() => setImageIndex(i)} aria-label={`Show photo ${i + 1}`} className={`overflow-hidden rounded-xl ring-2 transition ${i === imageIndex ? 'ring-brand-500' : 'ring-transparent hover:ring-brand-200'}`}>
-              <img src={src} alt="" loading="lazy" className="aspect-[16/10] h-full w-full object-cover md:aspect-auto" />
-            </button>
-          ))}
+        <div className="md:relative">
+          <div className="grid grid-cols-3 gap-3 md:absolute md:inset-0 md:grid-cols-1 md:grid-rows-3">
+            {listing.images.slice(0, 3).map((src, i) => (
+              <button key={src} onClick={() => setImageIndex(i)} aria-label={`Show photo ${i + 1}`} className={`block h-full min-h-0 overflow-hidden rounded-xl ring-2 transition ${i === imageIndex ? 'ring-brand-500' : 'ring-transparent hover:ring-brand-200'}`}>
+                <img src={src} alt="" loading="lazy" className="aspect-[16/10] h-full w-full object-cover md:aspect-auto" />
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
