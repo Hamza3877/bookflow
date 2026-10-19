@@ -99,16 +99,26 @@ export default function ListingDetail() {
       </p>
 
       {/* gallery */}
-      <div className="mt-5 grid gap-3 md:grid-cols-[2fr_1fr]">
-        <img src={listing.images[imageIndex]} alt={listing.title} className="aspect-[16/10] w-full rounded-2xl bg-slate-200 object-cover" />
-        <div className="grid grid-cols-3 gap-3 md:grid-cols-1 md:grid-rows-3">
+      <div className="mt-5 grid gap-3 md:h-[420px] md:grid-cols-[2fr_1fr]">
+        <img
+          src={listing.images[imageIndex]}
+          alt={listing.title}
+          className="aspect-[16/10] w-full rounded-2xl bg-slate-200 object-cover md:aspect-auto md:h-full"
+        />
+        <div className="grid grid-cols-3 gap-3 md:min-h-0 md:grid-cols-1 md:grid-rows-3">
           {listing.images.slice(0, 3).map((src, i) => (
-            <button key={src} onClick={() => setImageIndex(i)} aria-label={`Show photo ${i + 1}`} className={`overflow-hidden rounded-xl ring-2 transition ${i === imageIndex ? 'ring-brand-500' : 'ring-transparent hover:ring-brand-200'}`}>
-              <img src={src} alt="" loading="lazy" className="aspect-[16/10] h-full w-full object-cover md:aspect-auto" />
+            <button
+              key={src}
+              onClick={() => setImageIndex(i)}
+              aria-label={`Show photo ${i + 1}`}
+              className={`block h-full min-h-0 overflow-hidden rounded-xl ring-2 transition ${i === imageIndex ? 'ring-brand-500' : 'ring-transparent hover:ring-brand-200'}`}
+            >
+              <img src={src} alt="" loading="lazy" className="aspect-[16/10] w-full object-cover md:aspect-auto md:h-full" />
             </button>
           ))}
         </div>
       </div>
+
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_380px]">
         <div className="space-y-8">
