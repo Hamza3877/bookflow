@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getErrorMessage } from '../../api/client';
 import { listingsApi } from '../../api/endpoints';
+import { ImageUploader } from '../../components/listings/ImageUploader';
 import { Button } from '../../components/ui/Button';
 import { Field } from '../../components/ui/Field';
 import { Spinner } from '../../components/ui/Feedback';
@@ -110,9 +111,14 @@ export default function ListingForm() {
         </div>
 
         <Field label="Amenities" hint="Separate with commas"><input className="field" value={form.amenities} onChange={set('amenities')} placeholder="WiFi, Parking, Air conditioning" /></Field>
-        <Field label="Image links" hint="One link per line. The first one is the cover photo.">
-          <textarea required className="field min-h-24 font-mono text-xs" value={form.images} onChange={set('images')} placeholder="https://..." />
-        </Field>
+              <div>
+          <span className="mb-1.5 block text-sm font-medium text-slate-700">Photos</span>
+          <ImageUploader
+            images={form.images.split('\n').map((i) => i.trim()).filter(Boolean)}
+            onChange={(list) => setForm({ ...form, images: list.join('\n') })}
+          />
+          <span className="mt-1 block text-xs text-slate-500">The first photo is the cover. Add at least one.</span>
+        </div>
 
         <label className="flex items-center gap-2 text-sm">
           <input type="checkbox" className="h-4 w-4 accent-brand-600" checked={form.isActive} onChange={(e) => setForm({ ...form, isActive: e.target.checked })} />
