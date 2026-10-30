@@ -15,7 +15,7 @@ export function Layout() {
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-4 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:px-6">
           <Logo />
-          <p>Cars, villas and apartments from local businesses. Payments run in test mode.</p>
+         <p>Book cars, villas and apartments from trusted local businesses across Pakistan.</p>
         </div>
       </footer>
     </div>
