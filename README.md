@@ -9,6 +9,8 @@ An admin watches the whole platform.
 
 BookFlow is a full-stack booking platform for rental businesses like car rental, villas and apartments. Each business manages its own listings, prices and bookings, and customers can search, pick dates, pay and track their trips.
 
+Live: https://bookflow-puce.vercel.app/
+
 What it does
 - Customers: search by city, type, dates, guests and price in list or map view. They see the full price (weekend and long-stay rules) before booking, their dates are held for 10 minutes while they pay, and they can cancel or leave a review.
 - Business owners: a dashboard with revenue, occupancy and charts, plus listing, pricing and booking management.
