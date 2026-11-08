@@ -1,15 +1,15 @@
 # BookFlow: Multi-Tenant Booking & Rental Platform (MERN + TypeScript)
 
+A booking platform for rental businesses. Car rental companies, villa owners and apartment hosts each get their own dashboard, and customers can search, pick dates, pay and manage their trips.
+
+I built it to the problems real booking sites deal with: two people trying to book the same dates, payments that must not be lost, and businesses that should never see each other's data.
+
 Customers search cars, villas and apartments on a map, pick dates, pay, and manage bookings.
 Businesses (tenants) manage their own listings, prices and bookings from a dashboard.
 An admin watches the whole platform.
 
-**Stack:** React 18 + TypeScript + Vite + Tailwind, Redux Toolkit, TanStack Query, Node + Express + TypeScript, MongoDB (Mongoose), JWT auth, Stripe , Leaflet maps, Recharts,  Gemini AI..
 
-
-BookFlow is a full-stack booking platform for rental businesses like car rental, villas and apartments. Each business manages its own listings, prices and bookings, and customers can search, pick dates, pay and track their trips.
-
-Live: https://bookflow-puce.vercel.app/
+**Live demo:**  https://bookflow-puce.vercel.app/
 
 What it does
 - Customers: search by city, type, dates, guests and price in list or map view. They see the full price (weekend and long-stay rules) before booking, their dates are held for 10 minutes while they pay, and they can cancel or leave a review.
@@ -23,41 +23,8 @@ Problems I focused on
 - Secure login: JWT access token with a refresh token in an httpOnly cookie, and role-based access.
 - Photo upload: images are uploaded to Cloudinary and the app stores the image link, so pictures load fast from a CDN.
 
-Built with React, TypeScript, Node.js, Express, MongoDB, Redux Toolkit, TanStack Query, Tailwind CSS, Stripe, Leaflet maps and Gemini AI search. Hosted on Vercel, Railway and MongoDB Atlas.
 
-### Demo logins
-
-| Role | Email | Password |
-|---|---|---|
-| Customer | demo@bookflow.dev | Demo@123 |
-| Business owner | owner@bookflow.dev | Owner@123 |
-| Business owner 2 | hunza@bookflow.dev | Owner@123 |
-| Admin | admin@bookflow.dev | Admin@123 |
-
-## Screenshots
-
-![Home](docs/screenshots/1.png)
-![Dashboard](docs/screenshots/2.png)
-
-
-.......................
-
-
-
-# BookFlow
-
-A booking platform for rental businesses. Car rental companies, villa owners and apartment hosts each get their own dashboard, and customers can search, pick dates, pay and manage their trips.
-
-I built it to practise the problems real booking sites deal with: two people trying to book the same dates, payments that must not be lost, and businesses that should never see each other's data.
-
-**Live demo:** [add your link here]
 **Demo logins** are in the table below, so you can try every role without signing up.
-
-![Home page with search and listings](docs/screenshots/01-home.png)
-
----
-
-## Try it in 2 minutes
 
 Open the live demo and use the one-click buttons on the login page, or type these in.
 
@@ -68,11 +35,51 @@ Open the live demo and use the one-click buttons on the login page, or type thes
 | Business owner 2 | hunza@bookflow.dev | Owner@123 | A different business with its own data (Northern Escapes) |
 | Admin | admin@bookflow.dev | Admin@123 | Users, businesses, activity log |
 
-The first page load can take about 30 seconds, because the free server goes to sleep when nobody uses it.
 
-Payments run in test mode. No real money moves.
 
 ---
+
+## Screens
+
+
+![Home page with search and listings](docs/screenshots/homepage.png)
+
+
+**Customer**
+
+| Screen | What it does |
+|---|---|
+| Home | Search box, filters, list and map view |
+| Listing page | Photos, description, availability calendar, price breakdown, map, reviews |
+| Checkout | 10-minute countdown and payment |
+| My bookings | Upcoming, past and cancelled trips, plus reviews |
+
+![Listing page with calendar and price breakdown](docs/screenshots/02-listing.png)
+![Checkout with countdown](docs/screenshots/checkout.png)
+
+**Business owner**
+
+| Screen | What it does |
+|---|---|
+| Dashboard | Revenue, occupancy, charts, upcoming check-ins |
+| Listings | All of the business's listings, switch on or off, edit, delete |
+| Add or edit listing | Details, pricing rules, location and photo upload |
+| Bookings | Every booking, with a status filter and cancel |
+
+![Owner dashboard](docs/screenshots/04-owner-dashboard.png)
+![Edit listing with photo upload](docs/screenshots/05-edit-listing.png)
+
+**Admin**
+
+| Screen | What it does |
+|---|---|
+| Admin panel | Overview, users, businesses and the activity log |
+
+![Admin panel](docs/screenshots/06-admin.png)
+
+---
+
+
 
 ## The three roles
 
@@ -105,42 +112,6 @@ The person running the whole platform.
 - Overview numbers: users, businesses, listings, bookings and total revenue
 - A list of all users and all businesses
 - An activity log showing who did what and when (bookings, payments, cancellations, listing changes)
-
----
-
-## Screens
-
-**Customer**
-
-| Screen | What it does |
-|---|---|
-| Home | Search box, filters, list and map view |
-| Listing page | Photos, description, availability calendar, price breakdown, map, reviews |
-| Checkout | 10-minute countdown and payment |
-| My bookings | Upcoming, past and cancelled trips, plus reviews |
-
-![Listing page with calendar and price breakdown](docs/screenshots/02-listing.png)
-![Checkout with countdown](docs/screenshots/03-checkout.png)
-
-**Business owner**
-
-| Screen | What it does |
-|---|---|
-| Dashboard | Revenue, occupancy, charts, upcoming check-ins |
-| Listings | All of the business's listings, switch on or off, edit, delete |
-| Add or edit listing | Details, pricing rules, location and photo upload |
-| Bookings | Every booking, with a status filter and cancel |
-
-![Owner dashboard](docs/screenshots/04-owner-dashboard.png)
-![Edit listing with photo upload](docs/screenshots/05-edit-listing.png)
-
-**Admin**
-
-| Screen | What it does |
-|---|---|
-| Admin panel | Overview, users, businesses and the activity log |
-
-![Admin panel](docs/screenshots/06-admin.png)
 
 ---
 
@@ -177,9 +148,9 @@ The price comes from one function with no database calls: nights times the base 
 | Backend | Node.js, Express, TypeScript |
 | Database | MongoDB with Mongoose |
 | Security | JWT, bcrypt, Helmet, rate limiting, Zod validation |
-| Extras | Stripe (test mode), Leaflet maps, Recharts, Cloudinary photo upload, optional Gemini search |
+| Extras | Stripe, Leaflet maps, Recharts, Cloudinary photo upload,  Gemini AI search |
 | Testing and tools | Vitest, GitHub Actions, Docker |
-| Hosting (all free) | Vercel, Render, MongoDB Atlas |
+| Hosting (all free) | Vercel, Railway, MongoDB Atlas |
 
 ---
 
@@ -225,25 +196,3 @@ A request travels like this: route, then controller, then service, then model. R
 
 ---
 
-## What it does not have yet
-
-Being clear about this, so nobody is surprised:
-
-- Refunds are not automated when a booking is cancelled
-- No email notifications
-- No Google login
-- It uses MongoDB only. For a much bigger system I would look at a queue such as BullMQ with Redis for background work
-- Photo upload goes straight from the browser to Cloudinary with an unsigned preset. A larger system should sign each upload on the server
-- The test coverage is small (pricing and booking states). End-to-end tests would be the next addition
-
----
-
-## About me
-
-I am [your name], a MERN stack developer. I built BookFlow to show how I handle real-world problems, not just screens.
-
-- LinkedIn: [your link]
-- Email: [your email]
-- Other projects: [your links]
-
-Photos are from Unsplash and Pexels.
