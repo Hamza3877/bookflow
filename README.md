@@ -75,7 +75,7 @@ Open the live demo and use the one-click buttons on the login page, or type thes
 
 ![Owner dashboard](docs/screenshots/ownerdashboard.png)
 
-![listing](docs/screenshots/ownerlisting.png)
+![listing](docs/screenshots/ownerlistng.png)
 
 ![Add listing with photo upload](docs/screenshots/owneraddlisting.png)
 
