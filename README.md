@@ -41,10 +41,6 @@ Open the live demo and use the one-click buttons on the login page, or type thes
 
 ## Screens
 
-
-![Home page with search and listings](docs/screenshots/homepage.png)
-
-
 **Customer**
 
 | Screen | What it does |
@@ -54,15 +50,17 @@ Open the live demo and use the one-click buttons on the login page, or type thes
 | Checkout | 10-minute countdown and payment |
 | My bookings | Upcoming, past and cancelled trips, plus reviews |
 
-![Listing page with calendar and price breakdown](docs/screenshots/entrydetail.png)
+![Home page with search and listings](docs/screenshots/homepage.png)
 
-![Listing page with calendar and price breakdown](docs/screenshots/mapview.png)
+![entry detail](docs/screenshots/entrydetail.png)
 
-![Listing page with calendar and price breakdown](docs/screenshots/mybooking.png)
+![mapview](docs/screenshots/mapview.png)
 
-![Listing page with calendar and price breakdown](docs/screenshots/mybookupcome.png)
+![mybooking](docs/screenshots/mybooking.png)
 
-![Listing page with calendar and price breakdown](docs/screenshots/review.png)
+![mybookupcome](docs/screenshots/mybookupcome.png)
+
+![review](docs/screenshots/review.png)
 
 ![Checkout with countdown](docs/screenshots/checkout.png)
 
@@ -77,11 +75,11 @@ Open the live demo and use the one-click buttons on the login page, or type thes
 
 ![Owner dashboard](docs/screenshots/ownerdashboard.png)
 
-![Add listing with photo upload](docs/screenshots/ownerlisting.png)
+![listing](docs/screenshots/ownerlisting.png)
 
 ![Add listing with photo upload](docs/screenshots/owneraddlisting.png)
 
-![Add listing with photo upload](docs/screenshots/ownerbookingview.png)
+![book view](docs/screenshots/ownerbookingview.png)
 
 **Admin**
 
@@ -92,9 +90,9 @@ Open the live demo and use the one-click buttons on the login page, or type thes
 ![Admin panel](docs/screenshots/admindashboard.png)
 
 
-Signup, login
+**Signup, Login**
 
-![Admin panel](docs/screenshots/signup.png)
+![Sign Up, Login](docs/screenshots/signup.png)
 
 ---
 
