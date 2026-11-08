@@ -109,7 +109,7 @@ Someone who wants to rent a car or a place to stay.
 - Can type a normal sentence like *"7 seater in Karachi this weekend under 30k"* and the search fills in the filters
 - Sees the full price before booking, including weekend prices and long-stay discounts
 - Reserves the dates, which are held for 10 minutes while they pay
-- Pays at checkout (test mode)
+- Pays at checkout
 - Sees all trips in **My bookings**, can cancel, and can leave a review once the stay is over
 - Can view prices in PKR, USD, EUR, GBP or AED (shown as an estimate)
 
@@ -171,28 +171,6 @@ The price comes from one function with no database calls: nights times the base 
 
 ---
 
-## Run it on your own computer
-
-You need Node.js 18.18 or newer and a MongoDB database (a free Atlas cluster works).
-
-```bash
-npm install
-cp server/.env.example server/.env     # on Windows: copy server\.env.example server\.env
-# open server/.env and fill in MONGODB_URI and two long random secrets
-npm run seed                            # creates demo businesses, listings and bookings
-npm run dev                             # website on http://localhost:5173, API on :5000
-```
-
-Optional settings (all free):
-
-- **Stripe test payments:** add your `sk_test_` key to `STRIPE_SECRET_KEY` in `server/.env`. Without it, the app uses a built-in test payment form.
-- **Smarter search:** add a free Gemini key to `GEMINI_API_KEY`. Without it, a simple rule-based search handles sentences.
-- **Photo upload:** create `client/.env` with `VITE_CLOUDINARY_CLOUD_NAME` and `VITE_CLOUDINARY_UPLOAD_PRESET` (an unsigned preset from a free Cloudinary account). Without it, owners can paste image links instead.
-
-Run the tests with `npm test`.
-
----
-
 ## How the code is organised
 
 ```
@@ -208,8 +186,6 @@ client/src/
   api/         every call to the server in one place
   store/       Redux slices (login, currency, booking draft)
 ```
-
-A request travels like this: route, then controller, then service, then model. Routes say which URL, controllers handle the request, services hold the rules, and models describe the data.
 
 ---
 
